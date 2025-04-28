@@ -10,22 +10,22 @@ class AuthController {
     public static function login(Router $router) {
         $usuario = new Usuario();
         $errores = [];
+        $errorCredenciales = "";
         if($_SERVER["REQUEST_METHOD"] === "POST"){
             // debugear($_POST["login"]);
             $post = $_POST["login"];
-            $errores = Usuario::validarValorInputRegistro($post);
+            $errores = $usuario::validarValorInputRegistro($post);
             // debugear($errores);s
-            $correo = Usuario::validarEmail($post["correo"]);
+            $correo = $usuario::validarEmail($post["correo"]);
             
-            $usuario->IniciarSesion($correo,$post["password"]);
+            $errorCredenciales = $usuario->IniciarSesion($correo,$post["password"]);
             // $usuario->sincronizarDatos($resul);
-
-          
-
-            if(empty($errores)){
-
+            // debugear($errorCredenciales);
+            if(empty($errores) && empty($errorCredenciales)) {
+                header("Location: /DASWORDS");
+                exit;   
             }
-        
+            debugear($errorCredenciales);
         }
 
         $router->render("auth/login", 
@@ -50,6 +50,7 @@ class AuthController {
                 $usuario->setDatos($registro);
                 if($usuario->RegistrarUsuario()){
                     header("Location: /iniciarsesion");
+                    exit;
                 };
             }
 

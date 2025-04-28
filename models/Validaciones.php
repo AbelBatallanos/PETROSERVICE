@@ -95,8 +95,8 @@ class Validaciones {
     }
 
     public function validarDatoslogin($correous, $passwus,$vrcorreo, $vrpassw){
-        if(!($correous === $vrcorreo && $passwus === $vrpassw)){
-            return true;
-        }
+       return !($correous === $vrcorreo && $vrpassw === $passwus);
+            
+        
     }
 } 

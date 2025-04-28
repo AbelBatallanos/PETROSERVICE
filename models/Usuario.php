@@ -43,13 +43,15 @@ class Usuario extends Validaciones{
         $query = "SELECT * FROM usuarios WHERE correo = '{$email}' LIMIT 1 ;";
         $resultado = self::consultarBD($query);
         // debugear($resultado);
-        $this->sincronizarDatos($resultado["0"]);
+        if(!empty($resultado)){
+            $this->sincronizarDatos($resultado["0"]);
 
-        //comparamos credenciales
-        if($this->validarDatoslogin($this->correo, $this->password, $email, $password)){
-            return "¡No coinciden las creadenciales!";
+            //comparamos credenciales
+            if($this->validarDatoslogin($this->correo, $this->password, $email, $password)){
+                return "¡No coinciden las creadenciales!";
+            }
         }
-        header("Location: /DASWORDS");
+        
     }
 
     
