@@ -1,25 +1,25 @@
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Sistema de Soporte Técnico | PETROSERVICES</title>
-  <link  rel="stylesheet" href="/src/css/start.css">
-</head>
-<body>
+<?php
+require __DIR__."/includes/app.php";
 
-  <h1>PETROSERVICES te da la bienvenida </h1>
-  <p>Gestione solicitudes, asignaciones y soluciones técnicas para la empresa PETROSERVICES.</p>
+use MVC\Router;
+use Controllers\AuthController;
 
-  <div class="botones">
-      <a href="/views/auth/register.php">Registrar Usuario</a>
-    <a href="/views/auth/login.php">Iniciar Sesión</a>
-  </div>
+    $router = new Router();
 
-  <div class="footer">PETROSERVICES S.A. | Departamento de Sistemas</div>
+    $router->get("/", function(){
+      require_once __DIR__."/views/layout/layout-index.php";
+    });
+    $router->get("/registrarse", [AuthController::class,"registro"]);
+    $router->post("/registrarse", [AuthController::class,"registro"]);
+    $router->get("/iniciarsesion", [AuthController::class,"login"]);
+    $router->post("/iniciarsesion", [AuthController::class,"login"]);
 
-</body>
-</html>
+
+    $router->comprobarRutas();
+
+    // debugear("NODA");
+?>
 
 
 

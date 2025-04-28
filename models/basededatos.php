@@ -1,24 +1,21 @@
 <?php
+namespace Model;
 
-class basededatos {
-    private static $intance = null;
-    private $mysqli;
+class BasedeDatos {
+    // private static $intance = null;
+    protected static $mysqlis;
 
-    private function __construct(){
-        $this->mysqli = new mysqli("localhost","root","root", "petroservice");
-        if($this->mysqli->connect_error){
-            die("Error de Conexion en la BD". $this->mysqli->connect_error);
-        }
+  
+
+    public static function setBD($conexion){
+       self::$mysqlis = $conexion;
     }
 
     public static function getInstanciaBD(){
-        if(self::$intance === null){
-            self::$intance = new basededatos();
-        }
-        return self::$intance;
+        return self::$mysqlis;
     }
 
     public function cerrarConexionBD(){
-        if($this->mysqli !== null) $this->mysqli->close(); 
+        if($this->mysqlis !== null) $this->mysqlis->close(); 
     }
 }

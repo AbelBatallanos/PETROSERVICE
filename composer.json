@@ -1,5 +1,5 @@
 {
-    "name": "pc/proyecto_petro-server",
+    "name": "pc/proyecto_petroserver",
     "description": "\"Sistema PretoServer\"",
     "type": "project",
     "autoload": {

@@ -105,3 +105,25 @@
     font-size: 18px;
   }
   
+  .alerta.error{
+    padding: 1rem;
+    margin: 1rem 0;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: rgb(148, 13, 13);;
+  }
+  .alerta.exito{
+    padding: 1rem;
+    margin: 1rem 0;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: rgb(148, 13, 13);;
+  
+    
+    background-color: #71B100;;
+  
+  }

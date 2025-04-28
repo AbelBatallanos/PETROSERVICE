@@ -12,15 +12,14 @@ class Router{
         $this->rutasPost[$url] = $funcion;
     }
     
-    public function comprovarRutas(){
+    public function comprobarRutas(){
         // debugear($this->rutasGet);   
         $urlActual = $_SERVER['PATH_INFO'] ?? '/';
-       
+    //    debugear($this->rutasGet);
         $metodo = $_SERVER["REQUEST_METHOD"];
-
         if($metodo === "GET"){
             $fn = $this->rutasGet[$urlActual] ?? null;
-            
+
         }else{
             $fn = $this->rutasPost[$urlActual] ?? null; 
         }
@@ -30,7 +29,7 @@ class Router{
         }
     }
     //398 v
-    public function render($view, $datos = []){
+    public function render($view, $layout,  $datos = [] ){
         $list = [];
         foreach($datos as $key => $value){
             $$key = $value; //de manera implicita creamos 2 variables , invest sobre ello para mas entendimiento "variables de variables"
@@ -38,9 +37,14 @@ class Router{
         }
         // debugear($list); 
         ob_start();
+       
         include __DIR__ ."/views/$view.php";
+
         $contenido = ob_get_clean();
-        include __DIR__."/views/layout.php";
+        include __DIR__."/views/$layout.php";
     }//end first
+
+    
+
 }
 
