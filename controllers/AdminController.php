@@ -8,6 +8,7 @@ use Model\Administrador;
 use Model\Usuario;
 
 class AdminController{
+
     public static function actualizarUsuario(Router $router){
         $id = $_GET['id'] ?? null;
         if (!$id) {
@@ -22,23 +23,31 @@ class AdminController{
         
     // debugear($roles);
 
-    $router->render("formulario/formulario_actualizacionuser",
-     "layout/layout-updateUser",
-    ["departamentos" => $departamentos, "roles"=> $roles,
-    "usuario"=> $usuario ]);
+        $router->render("formulario/formulario_actualizacionuser",
+        "layout/layout-updateUser",
+        ["departamentos" => $departamentos, "roles"=> $roles,
+        "usuario"=> $usuario ]);
     }
 
     public static function gestionarUsuarios(Router $router){
         $roles = Rol::obtenerRoles();
         $departamentos = Departamento::ObtenerDepartamentos();
         $usuarios = Administrador::ListarUsuarios();   
+        if($_SERVER["REQUEST_METHOD"] === "POST" ){
+            echo "HOLAAAAAAA";
+        }
         // debugear($rol);
         // foreach($rol as $usuario){
         //     debugear($usuario->nombre);
         // }
+        // debugear($departamentos) ;
 
-        $router->render("admin/gestion_usuario", "layout/layout-admin", ["usuarios"=> $usuarios, "departamento" => $departamentos, 
+        $router->render("admin/gestion_usuario", "layout/layout-admin", ["usuarios"=> $usuarios, "departamentos" => $departamentos, 
         "roles" => $roles]);
+    }
+
+    public static function eliminarUsuario(Router $router){
+        
     }
 
     public static function listarCasosPendientes(Router $router){

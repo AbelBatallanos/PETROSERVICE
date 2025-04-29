@@ -14,7 +14,7 @@
             <div class="logo">
                 <a href="#">
                     <span class="logo-icon">P</span>
-                    <span class="logo-text">PETROSERVICES</span>
+                    <span class="logo-text">PETROSERVICES-SANTA</span>
                 </a>
             </div>
             <nav class="main-nav">
@@ -25,9 +25,7 @@
                     <li><a href="contactoprev.php">Contacto</a></li>
                 </ul>
             </nav>
-            <div class="login-button">
-                <a href="#" class="btn btn-primary">Iniciar Sesión</a>
-            </div>
+       
             <div class="mobile-menu-toggle">
                 <i class="fas fa-bars"></i>
             </div>

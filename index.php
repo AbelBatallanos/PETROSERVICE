@@ -24,6 +24,7 @@ use Controllers\funcionarioController;
     $router->get("/admin/CasosResueltos", [AdminController::class,"listarCasosResueltos"]);
     $router->get("/admin/CasosPendientes", [AdminController::class,"listarCasosPendientes"]);
     $router->get("/admin/actualizar/usuario", [AdminController::class,"actualizarUsuario"]);
+    $router->get("/admin/eliminar/usuario", [AdminController::class,"gestionarUsuarios"]);
 
     // $router->get("", [funcionarioController::class,""]);
 

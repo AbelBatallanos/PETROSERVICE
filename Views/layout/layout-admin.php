@@ -9,6 +9,7 @@
 </head>
 <body>
     <!-- Header -->
+
     <header>
         <div class="container header-container">
             <div class="logo">
@@ -20,7 +21,7 @@
             <div class="admin-info">
                 <span class="admin-label">Administrador::</span>
                 <span class="admin-name">Administrador</span>
-                <button class="btn btn-outline">Cerrar sesión</button>
+                <a href="/logout" class="btn btn-outline">Cerrar sesión</a>
             </div>
         </div>
     </header>
@@ -78,9 +79,6 @@
             </div>
 
             <!-- Tabs -->
-            
-
-
 
     <?php echo $contenido ?>
 

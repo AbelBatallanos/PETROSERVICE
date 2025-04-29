@@ -18,6 +18,7 @@
                         <tr>
                             <th>Nombre</th>
                             <th>Apellidos</th>
+                            <th>Departamento</th>
                             <th>Correo</th>
                             <th>Rol</th>
                             <th>Estado</th>
@@ -31,6 +32,13 @@
                             <tr>
                                 <td><?php echo $usuario->nombre ?></td>
                                 <td><?php echo $usuario->apellidos ?></td>
+                                <td>
+                                <?php foreach($departamentos as $departamento): ?>
+                                    <?php if($departamento->iddepartamento === $usuario->iddepartamento): ?>
+                                        <?php echo $departamento->nombre;  ?>
+                                    <?php endif;?>
+                                <?php endforeach; ?>  
+                                </td>
                                 <td><?php echo $usuario->correo ?></td>
                                 <td>
                                 <?php 
@@ -44,31 +52,17 @@
                                 </td>
                                 <td><span class="badge badge-activo">Activo</span></td>
                                 <td class="actions-cell">
-                                    <form method="POST" >
-                                        <a href="/admin/actualizar/usuario?id=<?php echo $usuario->id ?>" class="btn btn-sm btn-edit" >Editar</button>
-                                        <button class="btn btn-sm btn-delete" name="id" value="<?php echo $usuario->id ?>" >Eliminar</button>
+                                    <a href="/admin/actualizar/usuario?id=<?php echo $usuario->id; ?>" class="btn btn-sm btn-edit">Editar</a>
+                                    
+    
+                                    <form method="POST">
+                                        <input type="hidden" name="id" value="<?php echo $usuario->id; ?>">  <!--SOLUCIONAR RAPIDO NO FUNCIONA---->
+                                        <input type="submit" name="ele" value="eliminar">
+                                        <!-- <button type="submit" class="btn btn-sm btn-delete" name="delete">Eliminar</button> -->
                                     </form>
                                 </td>
                             </tr>            
-                        <?php } endforeach;  ?>
-                        <!-- User 2 -->
-                        <tr>
-                            <td>Ana Rodríguez</td>
-                            <td>arodriguez</td>
-                            <td>arodriguez@petroservices.com</td>
-                            <td><span class="badge badge-tecnico">Técnico</span></td>
-                            <td><span class="badge badge-activo">Activo</span></td>
-                            <td class="actions-cell">
-                                <button class="btn btn-sm btn-edit">Editar</button>
-                                <button class="btn btn-sm btn-delete">Eliminar</button>
-                            </td>
-                        </tr>
-                            
-                     
-                            
-                    
-                            
-                       
+                        <?php } endforeach;  ?>                 
                     </tbody>
                 </table>
             </div>

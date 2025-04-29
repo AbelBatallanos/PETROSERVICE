@@ -31,16 +31,16 @@ class Router{
             $fn = $this->rutasPost[$urlActual] ?? null; 
         }
         if(in_array($urlActual, $rutas_protegidas) && (!$auth || $authRol !== "2")) {
-            header("Location: /");
+            header("Location: /
+            ");
             exit;
         }
         
         if($fn){
-            // debugear($this, $fn);
             call_user_func($fn, $this);  //hace llamado a la funcion de $fn y busca a travez del $this 
         }
     }
-    //398 v
+
     public function render($view, $layout,  $datos = [] ){
         $list = [];
         foreach($datos as $key => $value){
