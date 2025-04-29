@@ -1,7 +1,7 @@
 <?php
 namespace Model;
 use Model\BasedeDatos;
-class Validaciones {
+class Validaciones extends BasedeDatos{
     protected static $columnasDB = [];
 
     public function SanitizarDatos(){ //Base de datos
@@ -47,30 +47,8 @@ class Validaciones {
         return filter_var($email, FILTER_VALIDATE_EMAIL);
     }
 
-    public static function consultarBD($query){
-        $conexion = BasedeDatos::getInstanciaBD();
-        $resultado = $conexion->query($query);
-        $respuesta = [];
-        while($registro = $resultado->fetch_assoc()){
-            $respuesta[] = static::crearObjeto($registro);
-        }
-        //Libera espacion en memoria
-        $resultado->free();
 
-        return $respuesta;
-    }
-
-    public static function crearObjeto($registro){
-        $objeto = new static;
-        foreach($registro as $key => $value){
-            if(property_exists($objeto, $key)){
-                $objeto->$key = $value;
-            }
-        }
-        return $objeto;
-    }
-
-    public static function validarValorInputRegistro($arg = []){
+    public static function validarValorInput($arg = []){
         $datosValidados =  [];
         foreach($arg as $key => $value){ 
             // $password_reply = $key === "password-reply"? $value : "";  
@@ -84,6 +62,13 @@ class Validaciones {
         //    }
         }
         return $datosValidados;
+    }
+
+    public function comprobarPassword($password){
+        if(!($password === $this->password)){
+            return false;
+        }
+        return true;
     }
 
     public function sincronizarDatos($arg = []){

@@ -1,30 +1,36 @@
 
+<main>
     <div class="login-container">
-        <div class="login-box">
-            <h2>Iniciar Sesión</h2>
-            
-            <form method="POST" action="/iniciarsesion">
-                <label for="email">Correo</label>
-                <input type="email" id="email" placeholder="ejemplo@gmail.com" name="login[correo]"  >
-
-                <label for="password">Contraseña</label>
-                <input type="password" id="password" name="login[password]" placeholder="123456" >
-
-                <div class="options">
-                    <a href="#">Forgot your password?</a>
-                </div>
-
-                <div class="checkbox">
-                    <input type="checkbox" id="remember">
-                    <label for="remember">Remember password</label>
-                </div>
-
-                <button type="submit" class="btn-login">Iniciar sesión</button>
-            </form>
-
-            <div class="signup-link">
-                New user? <a href="#">Create an account!</a>
+        <div class="login-card">
+            <div class="logo">
+                <span class="logo-icon">P</span>
+                <span class="logo-text">PETROSERVICES</span>
             </div>
+            
+            <h1 class="login-title">Iniciar Sesión</h1>
+            <p class="login-subtitle">Ingrese sus credenciales para acceder al sistema de soporte</p>
+            
+            <form class="login-form" method="POST" action="/iniciarsesion">
+                <div class="form-group">
+                    <label for="usuario">Usuario</label>
+                    <input type="text" id="usuario"  name="login[correo]" placeholder="Nombre de usuario" >
+                </div>
+                
+                <div class="form-group">
+                    <label for="contrasena">Contraseña</label>
+                    <input type="password" id="contrasena"  name="login[password]" placeholder="Contraseña" >
+                </div>
+                <?php foreach($errores as $error):?>
+                    <p> <?php 
+                        echo $error?></p>
+                <?php endforeach ; ?>
+
+                <input type="submit" class="btn btn-primary" value="Iniciar Sesión"> 
+            </form>
+            
+            <p class="forgot-password">
+                Si olvidó su contraseña, contacte al administrador del sistema
+            </p>
         </div>
     </div>
-
+</main>

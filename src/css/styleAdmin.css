@@ -36,20 +36,6 @@ a {
     font-size: 14px;
 }
 
-.btn-sm {
-    padding: 5px 10px;
-    font-size: 12px;
-}
-
-.btn-primary {
-    background-color: #2563eb;
-    color: white;
-}
-
-.btn-primary:hover {
-    background-color: #1d4ed8;
-}
-
 .btn-outline {
     background-color: transparent;
     color: #2563eb;
@@ -60,52 +46,23 @@ a {
     background-color: rgba(37, 99, 235, 0.1);
 }
 
-.btn-edit {
-    background-color: transparent;
-    color: #2563eb;
-    border: 1px solid #2563eb;
-}
-
-.btn-edit:hover {
-    background-color: rgba(37, 99, 235, 0.1);
-}
-
-.btn-delete {
-    background-color: transparent;
+.btn-reject {
+    background-color: #fff;
     color: #dc2626;
     border: 1px solid #dc2626;
 }
 
-.btn-delete:hover {
+.btn-reject:hover {
     background-color: rgba(220, 38, 38, 0.1);
 }
 
-.badge {
-    display: inline-block;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 12px;
-    font-weight: 500;
+.btn-approve {
+    background-color: #2563eb;
+    color: white;
 }
 
-.badge-tecnico {
-    background-color: rgba(37, 99, 235, 0.1);
-    color: #2563eb;
-}
-
-.badge-empleado {
-    background-color: rgba(79, 70, 229, 0.1);
-    color: #4f46e5;
-}
-
-.badge-activo {
-    background-color: rgba(16, 185, 129, 0.1);
-    color: #10b981;
-}
-
-.badge-inactivo {
-    background-color: rgba(107, 114, 128, 0.1);
-    color: #6b7280;
+.btn-approve:hover {
+    background-color: #1d4ed8;
 }
 
 /* Header Styles */
@@ -273,6 +230,143 @@ main {
     background-color: #2563eb;
 }
 
+/*---------Style Panel_Admin ----------*/
+/* Tickets List */
+.tickets-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ticket-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee;
+    overflow: hidden;
+}
+
+.ticket-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.ticket-id {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ticket-id h3 {
+    font-size: 16px;
+    color: #111;
+}
+
+.ticket-status {
+    font-size: 14px;
+    color: #666;
+}
+
+.ticket-body {
+    padding: 20px;
+}
+
+.ticket-details {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.ticket-column {
+    flex: 3;
+}
+
+.tech-column {
+    flex: 1;
+}
+
+.detail-group {
+    margin-bottom: 15px;
+}
+
+.detail-group h4 {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.detail-group p {
+    color: #333;
+}
+
+.ticket-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .admin-info {
+        margin-top: 15px;
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .tabs {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 5px;
+    }
+    
+    .ticket-details {
+        flex-direction: column;
+    }
+    
+    .tech-column {
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .ticket-id {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .ticket-status {
+        margin-top: 5px;
+    }
+    
+    .ticket-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .ticket-actions .btn {
+        width: 100%;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+}
+
+/*----------style Gestion usuarios  --------------*/
+
 /* User Management */
 .user-management {
     background-color: #fff;
@@ -381,3 +475,159 @@ main {
         width: 100%;
     }
 }
+
+
+
+
+/*-----  style Casos-Resueltos -------*/
+
+/* Cases List */
+.cases-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.case-card {
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.case-card:last-child {
+    border-bottom: none;
+}
+
+.case-header {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #eee;
+}
+
+.case-id h3 {
+    font-size: 16px;
+    color: #111;
+}
+
+.case-date {
+    font-size: 14px;
+    color: #666;
+    margin-left: 10px;
+}
+
+.case-body {
+    padding: 20px;
+}
+
+.case-details {
+    display: flex;
+}
+
+.case-column {
+    flex: 3;
+}
+
+.tech-column {
+    flex: 1;
+}
+
+.detail-group {
+    margin-bottom: 15px;
+}
+
+.detail-group h4 {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.detail-group p {
+    color: #333;
+}
+
+.observation {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff2f2;
+    border-radius: 8px;
+    border-left: 3px solid #ef4444;
+}
+
+.observation h4 {
+    font-size: 14px;
+    color: #ef4444;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.observation p {
+    color: #333;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .admin-info {
+        margin-top: 15px;
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .tabs {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 5px;
+    }
+    
+    .case-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .case-status {
+        margin-top: 10px;
+    }
+    
+    .case-details {
+        flex-direction: column;
+    }
+    
+    .tech-column {
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .case-id {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .case-date {
+        margin-left: 0;
+        margin-top: 5px;
+    }
+}
+
+

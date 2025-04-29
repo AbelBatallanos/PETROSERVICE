@@ -14,7 +14,7 @@
 
   <div class="botones">
       <a  id="btnRegistrar">Registrar Usuario</a>
-    <a href="/views/auth/login.php">Iniciar Sesión</a>
+    <a href="/iniciarsesion">Iniciar Sesión</a>
   </div>
 
   <div class="footer">PETROSERVICES S.A. | Departamento de Sistemas</div>

@@ -1,6 +1,6 @@
 <?php
 namespace Model;
-
+use Model\BasedeDatos;
 
 class Departamento extends Validaciones{
     public $iddepartamento;
@@ -15,7 +15,7 @@ class Departamento extends Validaciones{
        return $resultado;
     }
 
-    
+ 
 }
 
 

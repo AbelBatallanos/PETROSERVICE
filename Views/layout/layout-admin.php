@@ -1,85 +1,89 @@
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Footer PETROSERVICES</title>
-    <link rel="stylesheet" href="footer.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <title>PETROSERVICES - Panel de Administrador</title>
+    <link rel="stylesheet" href="/src/css/styleAdmin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="#">
+                    <span class="logo-icon">P</span>
+                    <span class="logo-text">PETROSERVICES</span>
+                </a>
+            </div>
+            <div class="admin-info">
+                <span class="admin-label">Administrador::</span>
+                <span class="admin-name">Administrador</span>
+                <button class="btn btn-outline">Cerrar sesión</button>
+            </div>
+        </div>
+    </header>
 
+    <!-- Main Content -->
+    
+        <div class="container">
+            <h1 class="page-title">Panel de Administrador</h1>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <!-- Card 1 -->
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h3 class="stat-title">Solicitudes Nuevas</h3>
+                        <p class="stat-value">3</p>
+                    </div>
+                    <div class="stat-icon blue-light">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h3 class="stat-title">Casos Resueltos</h3>
+                        <p class="stat-value">12</p>
+                    </div>
+                    <div class="stat-icon green-light">
+                        <i class="fas fa-file-circle-check"></i>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h3 class="stat-title">Usuarios Activos</h3>
+                        <p class="stat-value">4</p>
+                    </div>
+                    <div class="stat-icon purple-light">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h3 class="stat-title">Técnicos</h3>
+                        <p class="stat-value">2</p>
+                    </div>
+                    <div class="stat-icon orange-light">
+                        <i class="fas fa-chart-simple"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            
 
 
 
     <?php echo $contenido ?>
 
-    <footer>
-        <div class="footer-container">
-            <div class="footer-logo">
-                <img src="logo.png" alt="Petroservice Logo">
-                <p>Petroservice</p>
-            </div>
-
-            <div class="footer-contact">
-                <h3>Contacto</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Ruta Nacional 34 Km 682, 4322 Fernández, Santiago del Estero</p>
-                <p><strong>Teléfonos útiles:</strong></p>
-                <p><i class="fas fa-phone"></i> Estación de Servicio (0385) 587 8731</p>
-                <p><i class="fas fa-phone"></i> YPF Agro (0385) 489 3170</p>
-                <p><i class="fas fa-phone"></i> Administración (0385) 406 0793</p>
-                <p><i class="fas fa-envelope"></i> info@petroservice.com.ar</p>
-            </div>
-
-            <div class="footer-links">
-                <h3>Institucional</h3>
-                <ul>
-                    <li>Inicio</li>
-                    <li>La Empresa</li>
-                    <li>YPF Agro</li>
-                    <li>Estación de Servicio YPF</li>
-                    <li>Responsabilidad Empresarial</li>
-                    <li>Mercados</li>
-                    <li>Trabaja con Nosotros</li>
-                    <li>Contacto</li>
-                </ul>
-            </div>
-
-            <div class="footer-products">
-                <h3>Productos y Servicios</h3>
-                <ul>
-                    <li>Protección de Cultivos</li>
-                    <li>Fertilizantes</li>
-                    <li>Plásticos</li>
-                    <li>Lubricantes</li>
-                    <li>Combustibles</li>
-                    <li>Semillas</li>
-                </ul>
-            </div>
-
-            <div class="footer-newsletter">
-                <h3>Newsletter</h3>
-                <p>Inscríbete para recibir nuestras últimas novedades</p>
-                <form action="#">
-                    <input type="email" placeholder="Ingresa tu email">
-                    <button type="submit">Ok</button>
-                </form>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2025 PETROSERVICES - Todos los derechos reservados</p>
-            <div class="footer-social">
-                <p>Seguinos en:</p>
-                <i class="fab fa-facebook"></i>
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-youtube"></i>
-            </div>
-        </div>
-    </footer>
-
+    <!-- <script src="/src/js/utils/tabs.js" type="module"></script> -->
 </body>
 </html>

@@ -14,8 +14,15 @@ class Router{
     
     public function comprobarRutas(){
         // debugear($this->rutasGet);   
+        session_start();
+        $auth = $_SESSION["login"] ?? null;
+        $authRol = $_SESSION["rol"] ?? null;
+        // debugear($auth);
+        $rutas_protegidas = ["/admin", "/admin/CasosResueltos", "/admin/CasosPendientes"];
+
         $urlActual = $_SERVER['PATH_INFO'] ?? '/';
-    //    debugear($this->rutasGet);
+
+        //  debugear($this->rutasGet);
         $metodo = $_SERVER["REQUEST_METHOD"];
         if($metodo === "GET"){
             $fn = $this->rutasGet[$urlActual] ?? null;
@@ -23,6 +30,11 @@ class Router{
         }else{
             $fn = $this->rutasPost[$urlActual] ?? null; 
         }
+        if(in_array($urlActual, $rutas_protegidas) && (!$auth || $authRol !== "2")) {
+            header("Location: /");
+            exit;
+        }
+        
         if($fn){
             // debugear($this, $fn);
             call_user_func($fn, $this);  //hace llamado a la funcion de $fn y busca a travez del $this 

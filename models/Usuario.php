@@ -38,23 +38,35 @@ class Usuario extends Validaciones{
         return $resultado;
     }   
 
-    public function IniciarSesion($email,$password){
-        
-        $query = "SELECT * FROM usuarios WHERE correo = '{$email}' LIMIT 1 ;";
+    public function existeUsuario($correo){
+        $query = "SELECT * FROM usuarios WHERE correo = '{$correo}' LIMIT 1;";
         $resultado = self::consultarBD($query);
-        // debugear($resultado);
-        if(!empty($resultado)){
+        if($resultado){
             $this->sincronizarDatos($resultado["0"]);
-
-            //comparamos credenciales
-            if($this->validarDatoslogin($this->correo, $this->password, $email, $password)){
-                return "¡No coinciden las creadenciales!";
-            }
+            return $resultado;
         }
+    }
+
+    public function IniciarSesion(){
+        session_start();
+
+        // Llenar el arreglo de sesion
+        $_SESSION['id'] = $this->id;
+        $_SESSION['usuario'] = $this->correo;
+        $_SESSION['rol'] = $this->idrol;
+        $_SESSION['login'] = true;
+
+        header('Location: /admin');
+    }
+
+    public function buscarUsuario($id){
+        $query = "SELECT * FROM usuarios WHERE id = '{$id}' LIMIT 1;";
+        $resultado = self::encontrar($query);
+        
+        $this->sincronizarDatos($resultado);
         
     }
 
-    
     public function ActualizarDatos(){
 
     }

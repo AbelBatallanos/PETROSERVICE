@@ -10,26 +10,34 @@ class AuthController {
     public static function login(Router $router) {
         $usuario = new Usuario();
         $errores = [];
-        $errorCredenciales = "";
+        // $errorCredenciales = "";
         if($_SERVER["REQUEST_METHOD"] === "POST"){
             // debugear($_POST["login"]);
             $post = $_POST["login"];
-            $errores = $usuario::validarValorInputRegistro($post);
+            $errores = $usuario::validarValorInput($post);
             // debugear($errores);s
             $correo = $usuario::validarEmail($post["correo"]);
-            
-            $errorCredenciales = $usuario->IniciarSesion($correo,$post["password"]);
-            // $usuario->sincronizarDatos($resul);
-            // debugear($errorCredenciales);
-            if(empty($errores) && empty($errorCredenciales)) {
-                header("Location: /DASWORDS");
-                exit;   
+
+            $resultado = $usuario->existeUsuario($correo);
+            if(!$resultado){
+                $errores[] = "No existe ese Usuario";
+            } else {
+                $autentificado = $usuario->comprobarPassword($post["password"]);
+                if($autentificado){
+                   $usuario->IniciarSesion();
+                }else{
+                    $errores[] = " La Contraseña es Incorrecta";
+                }
+                // $usuario->sincronizarDatos($resul);
+                // debugear($errorCredenciales);
+              
             }
-            debugear($errorCredenciales);
+            // debugear($errorCredenciales);
         }
 
         $router->render("auth/login", 
-         "layout/layout-login", []
+         "layout/layout-login", ["errores" =>$errores     
+         ]
         );
     }
 
@@ -44,7 +52,7 @@ class AuthController {
         if($_SERVER["REQUEST_METHOD"] === "POST"){
 
             $registro = $_POST["registro"];
-            $errores = $usuario::validarValorInputRegistro($registro);
+            $errores = $usuario::validarValorInput($registro);
             // debugear($registro);
             if(empty($errores)){
                 $usuario->setDatos($registro);

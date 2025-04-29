@@ -19,10 +19,10 @@
             </div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Solicitar Soporte</a></li>
-                    <li><a href="#">Estado de Solicitud</a></li>
-                    <li><a href="#" class="active">Contacto</a></li>
+                    <li><a href="homepre.php" class="active">Home</a></li>
+                    <li><a href="formulario_solicitud.php">Solicitar Soporte</a></li>
+                    <li><a href="">Estado de Solicitud</a></li>
+                    <li><a href="contactoprev.php">Contacto</a></li>
                 </ul>
             </nav>
             <div class="login-button">
