@@ -9,7 +9,7 @@
         <div class="user-management">
             <div class="user-management-header">
                 <h2 class="section-title">Lista de Usuarios</h2>
-                <button class="btn btn-primary">Crear Usuario</button>
+                <a href="/registrarse" class="btn btn-primary">Crear Usuario</a>
             </div>
                 
             <div class="table-responsive">
@@ -54,11 +54,10 @@
                                 <td class="actions-cell">
                                     <a href="/admin/actualizar/usuario?id=<?php echo $usuario->id; ?>" class="btn btn-sm btn-edit">Editar</a>
                                     
-    
                                     <form method="POST">
-                                        <input type="hidden" name="id" value="<?php echo $usuario->id; ?>">  <!--SOLUCIONAR RAPIDO NO FUNCIONA---->
-                                        <input type="submit" name="ele" value="eliminar">
-                                        <!-- <button type="submit" class="btn btn-sm btn-delete" name="delete">Eliminar</button> -->
+                                        <input type="hidden" name="id" value="<?php echo $usuario->id; ?>">  
+                                        
+                                        <button type="submit" name="ele" class="btn btn-sm  btn-delete" >Eliminar</button>
                                     </form>
                                 </td>
                             </tr>            

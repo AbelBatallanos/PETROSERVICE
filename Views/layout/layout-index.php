@@ -1,6 +1,4 @@
 
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,7 +10,7 @@
 </head>
 <body>
     <!-- Header -->
-     <?php debugear($_SESSION);?>
+  
     <header>
         <div class="container header-container">
             <div class="logo">

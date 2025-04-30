@@ -115,6 +115,13 @@ body {
     margin-top: 10px;
 }
 
+.error-message {
+    color: #e74c3c;
+    font-size: 13px;
+    margin-top: 4px;
+    display: block;
+  }
+
 .btn-primary {
     background-color: #2563eb;
     color: white;

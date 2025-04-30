@@ -12,8 +12,8 @@
             
             <form class="login-form" method="POST" action="/iniciarsesion">
                 <div class="form-group">
-                    <label for="usuario">Usuario</label>
-                    <input type="text" id="usuario"  name="login[correo]" placeholder="Nombre de usuario" >
+                    <label for="usuario">Correo</label>
+                    <input type="text" id="usuario"  name="login[correo]" placeholder="ejemplo@gmail.com" >
                 </div>
                 
                 <div class="form-group">
@@ -21,7 +21,7 @@
                     <input type="password" id="contrasena"  name="login[password]" placeholder="Contraseña" >
                 </div>
                 <?php foreach($errores as $error):?>
-                    <p> <?php 
+                    <p class="error-message"> <?php 
                         echo $error?></p>
                 <?php endforeach ; ?>
 

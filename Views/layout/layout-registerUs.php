@@ -17,18 +17,7 @@
                     <span class="logo-text">PETROSERVICES</span>
                 </a>
             </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Servicios</a></li>
-                    <li><a href="#">Nosotros</a></li>
-                    <li><a href="#">Contacto</a></li>
-                </ul>
-            </nav>
-            <div class="auth-buttons">
-                <a href="#" class="btn btn-outline active">Registrarse</a>
-                <a href="#" class="btn btn-primary">Iniciar Sesión</a>
-            </div>
+
             <div class="mobile-menu-toggle">
                 <i class="fas fa-bars"></i>
             </div>
@@ -55,15 +44,7 @@
                     </p>
                 </div>
 
-                <div class="footer-links">
-                    <h3>Enlaces Rápidos</h3>
-                    <ul>
-                        <li><a href="#">Iniciar Sesión</a></li>
-                        <li><a href="#">Registrarse</a></li>
-                        <li><a href="#">Servicios</a></li>
-                        <li><a href="#">Contacto</a></li>
-                    </ul>
-                </div>
+                <div class="footer-links"> </div>
 
                 <div class="footer-contact">
                     <h3>Contacto</h3>

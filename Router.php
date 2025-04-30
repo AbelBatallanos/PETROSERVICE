@@ -35,6 +35,25 @@ class Router{
             ");
             exit;
         }
+        if ($auth) {
+            if ($urlActual === "/") {
+                switch ($authRol) {
+                    case "1":
+                        header("Location: /panel");
+                        exit;
+                    case "3":
+                        header("Location: /panel/Jefe-tecnico");
+                        exit;
+                    case "4":
+                        header("Location: /panel/tecnico");
+                        exit;
+                    default:
+                        // Si el rol no es reconocido
+                        header("Location: /");
+                        exit;
+                }
+            }
+        }
         
         if($fn){
             call_user_func($fn, $this);  //hace llamado a la funcion de $fn y busca a travez del $this 

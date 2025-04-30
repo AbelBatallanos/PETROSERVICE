@@ -54,6 +54,8 @@ class Usuario extends Validaciones{
         $_SESSION['id'] = $this->id;
         $_SESSION['usuario'] = $this->correo;
         $_SESSION['rol'] = $this->idrol;
+        $_SESSION['nombre'] = $this->nombre;
+        $_SESSION['apellidos'] = $this->apellidos;
         $_SESSION['login'] = true;
 
         header('Location: /admin');

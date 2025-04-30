@@ -12,8 +12,8 @@
                 <div class="ticket-card">
                     <div class="ticket-header">
                         <div class="ticket-id">
-                            <h3>SOL-2023-001</h3>
-                            <span class="ticket-status">Resuelto: 2023-04-21</span>
+                            
+                            <span class="ticket-status">Pendiente: 2025-04-27</span>
                         </div>
                     </div>
                     
@@ -21,34 +21,34 @@
                         <div class="ticket-details">
                             <div class="ticket-column">
                                 <div class="detail-group">
-                                    <h4>Empleado</h4>
+                                    <span>Empleado</span>
                                     <p>Juan Pérez - Producción</p>
                                 </div>
                                 
                                 <div class="detail-group">
-                                    <h4>Problema</h4>
+                                    <span>Problema</span>
                                     <p>La computadora no enciende</p>
                                 </div>
                                 
                                 <div class="detail-group">
-                                    <h4>Solución aplicada</h4>
+                                    <span>Solución aplicada</span>
                                     <p>Se reemplazó la fuente de poder por una nueva.</p>
                                 </div>
                                 
                                 <div class="detail-group">
-                                    <h4>Materiales utilizados</h4>
+                                    <span>Materiales utilizados</span>
                                     <p>Fuente de poder ATX 650W</p>
                                 </div>
                                 
                                 <div class="detail-group">
-                                    <h4>Tiempo de resolución</h4>
+                                    <span>Tiempo de resolución</span>
                                     <p>Entre 30 minutos y 1 hora</p>
                                 </div>
                             </div>
                             
                             <div class="ticket-column tech-column">
                                 <div class="detail-group">
-                                    <h4>Técnico</h4>
+                                    <span>Técnico</span>
                                     <p>Carlos Ramírez</p>
                                 </div>
                             </div>
@@ -65,8 +65,8 @@
                 <div class="ticket-card">
                     <div class="ticket-header">
                         <div class="ticket-id">
-                            <h3>SOL-2023-007</h3>
-                            <span class="ticket-status">Resuelto: 2023-04-26</span>
+                            
+                            <span class="ticket-status">Pendiente: 2025-04-27</span>
                         </div>
                     </div>
                     
@@ -74,29 +74,29 @@
                         <div class="ticket-details">
                             <div class="ticket-column">
                                 <div class="detail-group">
-                                    <h4>Empleado</h4>
+                                    <span>Empleado</span>
                                     <p>Diana Mendoza - Administrativo</p>
                                 </div>
                                 
                                 <div class="detail-group">
-                                    <h4>Problema</h4>
+                                    <span>Problema</span>
                                     <p>No puedo imprimir documentos desde mi computadora</p>
                                 </div>
                                 
                                 <div class="detail-group">
-                                    <h4>Solución aplicada</h4>
+                                    <span>Solución aplicada</span>
                                     <p>Se reinstalaron los drivers de la impresora y se verificó la conexión de red.</p>
                                 </div>
                                 
                                 <div class="detail-group">
-                                    <h4>Tiempo de resolución</h4>
+                                    <span>Tiempo de resolución</span>
                                     <p>Menos de 30 minutos</p>
                                 </div>
                             </div>
                             
                             <div class="ticket-column tech-column">
                                 <div class="detail-group">
-                                    <h4>Técnico</h4>
+                                    <span>Técnico</span>
                                     <p>Ana Rodríguez</p>
                                 </div>
                             </div>

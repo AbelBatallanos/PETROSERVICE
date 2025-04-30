@@ -20,8 +20,6 @@ class AdminController{
         // debugear($usuario);
         $departamentos = Departamento::ObtenerDepartamentos();
         $roles = Rol::obtenerRoles();
-        
-    // debugear($roles);
 
         $router->render("formulario/formulario_actualizacionuser",
         "layout/layout-updateUser",
@@ -33,21 +31,18 @@ class AdminController{
         $roles = Rol::obtenerRoles();
         $departamentos = Departamento::ObtenerDepartamentos();
         $usuarios = Administrador::ListarUsuarios();   
-        if($_SERVER["REQUEST_METHOD"] === "POST" ){
-            echo "HOLAAAAAAA";
+        if($_SERVER["REQUEST_METHOD"] === "POST"){
+            debugear($_POST);
         }
-        // debugear($rol);
-        // foreach($rol as $usuario){
-        //     debugear($usuario->nombre);
-        // }
-        // debugear($departamentos) ;
-
         $router->render("admin/gestion_usuario", "layout/layout-admin", ["usuarios"=> $usuarios, "departamentos" => $departamentos, 
         "roles" => $roles]);
     }
 
     public static function eliminarUsuario(Router $router){
-        
+            if($_SERVER["REQUEST_METHOD"] === "POST"){
+                // debugear($_POST);
+            }
+            $router->render("admin/gestion_usuario", "layout/layout-admin", []);
     }
 
     public static function listarCasosPendientes(Router $router){

@@ -51,15 +51,11 @@ class Validaciones extends BasedeDatos{
     public static function validarValorInput($arg = []){
         $datosValidados =  [];
         foreach($arg as $key => $value){ 
-            // $password_reply = $key === "password-reply"? $value : "";  
-            //Sin valores
+
            if(!$value){
             $datosValidados[] = "Debes Rellenar ". $key; 
            }
-           //identico password
-        //    if($key === "password" && $password_reply !== $value){
-        //     $datosValidados[] = "No coinciden las contraseñas";
-        //    }
+
         }
         return $datosValidados;
     }

@@ -76,7 +76,7 @@
                     </form>
                     
                     <div class="register-footer">
-                        <p>¿Ya tiene una cuenta? <a href="#">Iniciar Sesión</a></p>
+                        <p>¿Ya tiene una cuenta? <a href="/iniciarsesion">Iniciar Sesión</a></p>
                     </div>
                 </div>
             </div>

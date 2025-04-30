@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PETROSERVICES - Panel de Administrador</title>
-    <link rel="stylesheet" href="/src/css/styleAdmin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/src/css/styleAdmin.css">
 </head>
 <body>
     <!-- Header -->
@@ -19,14 +19,10 @@
                 </a>
             </div>
             <div class="admin-info">
-                <span class="admin-label">Administrador::</span>
-                <span class="admin-name">Administrador</span>
                 <a href="/logout" class="btn btn-outline">Cerrar sesión</a>
             </div>
         </div>
     </header>
-
-    <!-- Main Content -->
     
         <div class="container">
             <h1 class="page-title">Panel de Administrador</h1>
@@ -37,7 +33,7 @@
                 <div class="stat-card">
                     <div class="stat-info">
                         <h3 class="stat-title">Solicitudes Nuevas</h3>
-                        <p class="stat-value">3</p>
+                        <p class="stat-value">2</p>
                     </div>
                     <div class="stat-icon blue-light">
                         <i class="fas fa-chart-line"></i>
@@ -59,7 +55,7 @@
                 <div class="stat-card">
                     <div class="stat-info">
                         <h3 class="stat-title">Usuarios Activos</h3>
-                        <p class="stat-value">4</p>
+                        <p class="stat-value">10</p>
                     </div>
                     <div class="stat-icon purple-light">
                         <i class="fas fa-user"></i>

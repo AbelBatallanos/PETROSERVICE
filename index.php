@@ -5,7 +5,9 @@ require __DIR__."/includes/app.php";
 use MVC\Router;
 use Controllers\AdminController;
 use Controllers\AuthController;
-use Controllers\funcionarioController;
+use Controllers\EmpleadoController;
+use Controllers\FormSolicitudController;
+use Controllers\TecnicoController;
 
     $router = new Router();
 
@@ -26,7 +28,22 @@ use Controllers\funcionarioController;
     $router->get("/admin/actualizar/usuario", [AdminController::class,"actualizarUsuario"]);
     $router->get("/admin/eliminar/usuario", [AdminController::class,"gestionarUsuarios"]);
 
-    // $router->get("", [funcionarioController::class,""]);
+    // Empleado
+    $router->get("/panel", [EmpleadoController::class,"panel"]);
+    $router->get("/formulario/solicitud", [FormSolicitudController::class,"generarSolicitud"]);
+    $router->post("/formulario/solicitud", [FormSolicitudController::class,"generarSolicitud"]);
+    $router->get("/formulario/solicitud", [FormSolicitudController::class,"generarSolicitud"]);
+    
+    // Jefe-Tecnico
+    $router->get("/panel/Jefe-tecnico", [FormSolicitudController::class,"panel"]);
+    $router->get("/formulario/solicitud", [FormSolicitudController::class,"generarSolicitud"]);
+    $router->post("/formulario/solicitud", [FormSolicitudController::class,"generarSolicitud"]);
+    
+    // Tecnico
+    $router->get("/panel/tecnico", [TecnicoController::class,"panel"]);
+    $router->get("/panel/tecnico/progreso", [TecnicoController::class,"progreso"]);
+    $router->post("/formulario/solicitud", [TecnicoController::class,"generarSolicitud"]);
+    
 
 
     $router->comprobarRutas();
